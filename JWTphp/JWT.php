@@ -83,7 +83,6 @@ class JWTElements
             case Enums\Algorithm::RS384:
             case Enums\Algorithm::RS512:
                 throw new Exceptions\NotSupportedException("Verifying a JWT with a secret is not supported on RSA keys");
-                break;
         }
         throw new Exceptions\NotImplementedException();
     }
@@ -103,7 +102,6 @@ class JWTElements
             case Enums\Algorithm::HS384:
             case Enums\Algorithm::HS512:
                 throw new Exceptions\NotSupportedException("Verifying a JWT with a key is not supported on HMAC keys");
-                break;
         }
         throw new Exceptions\NotImplementedException();
     }
@@ -124,7 +122,7 @@ class JWT
      * @param array|string $header
      * @param array|string $payload
      * @param Enums\Algorithm $algorithm
-     * @throws Not
+     * @throws Exceptions\NotImplementedException
      */
     function __construct(array|string $payload, Enums\Algorithm $algorithm)
     {
@@ -146,7 +144,6 @@ class JWT
             case Enums\Algorithm::RS384:
             case Enums\Algorithm::RS512:
                 throw new Exceptions\NotImplementedException();
-                break;
         }
     }
 
@@ -190,7 +187,6 @@ class JWT
             case Enums\Algorithm::RS384:
             case Enums\Algorithm::RS512:
                 throw new Exceptions\NotSupportedException("Signing with a secret is not supported on RSA keys");
-                break;
         }
         throw new Exceptions\NotImplementedException();
     }
@@ -210,7 +206,6 @@ class JWT
             case Enums\Algorithm::HS384:
             case Enums\Algorithm::HS512:
                 throw new Exceptions\NotSupportedException("Signing with a key is not supported on HMAC keys");
-                break;
         }
         throw new Exceptions\NotImplementedException();
     }
